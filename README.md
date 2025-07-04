@@ -1,7 +1,5 @@
 <h1 align="center">
-  <br>
-  <a href="https://devfolio-brown.vercel.app/"><img src="https://user-images.githubusercontent.com/75992256/276612037-portfolio.png" alt="Devfolio" width="120"></a>
-  <br>
+  
   Devfolio
   <br>
 </h1>
