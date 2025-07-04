@@ -2,7 +2,7 @@
 import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
-  const navItems = ['home', 'blog', 'thoughts', 'guestbook'];
+  const navItems = ['home', 'projects', 'blogs'];
 
   return (
     <nav className="flex justify-between items-center py-6 px-6 md:px-12">

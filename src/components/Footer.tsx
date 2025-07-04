@@ -3,24 +3,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   // Convert to Roman numerals
-  const toRoman = (num: number) => {
-    const values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-    const literals = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
-    let result = '';
-    
-    for (let i = 0; i < values.length; i++) {
-      while (num >= values[i]) {
-        result += literals[i];
-        num -= values[i];
-      }
-    }
-    return result;
-  };
-
+  
   const socialLinks = [
-    { text: 'follow me on x', href: 'https://x.com' },
-    { text: 'let\'s collaborate on github', href: 'https://github.com' },
-    { text: 'love to talk?', href: 'mailto:hello@example.com' }
+    { text: 'follow me on instagram', href: 'https://www.instagram.com/akashsundarr/' },
+    { text: 'let\'s collaborate on github', href: 'https://github.com/akashsundarr' },
+    { text: 'love to talk?', href: "mailto:akashsundarrr@gmail.com" 
+ }
   ];
 
   return (
@@ -46,7 +34,7 @@ const Footer = () => {
             <a href="/uses" className="underline-link hover:text-foreground transition-colors">
               /uses
             </a>
-            <span>{toRoman(currentYear)}</span>
+            <span>{(currentYear)}</span>
           </div>
         </div>
       </div>
