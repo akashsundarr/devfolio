@@ -31,6 +31,9 @@ const Footer = () => {
         
         <div className="flex justify-center items-center pt-6 border-t border-border">
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
+            <a href="/resume" className="underline-link hover:text-foreground transition-colors">
+               /resume
+            </a>
             <a href="/uses" className="underline-link hover:text-foreground transition-colors">
               /uses
             </a>

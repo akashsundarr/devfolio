@@ -29,6 +29,55 @@ const Blog = ({ posts, title = "Latest Blog Posts", className = "" }: BlogProps)
     tags: ['Career Journey', 'MERN Stack', 'Self-Taught Developer'],
     readMoreUrl: '/blog/bio-maths-to-mern-dev',
     isExternal: false
+  },
+   {
+    id: '1',
+    title: 'From Bio-Maths Student to Fullstack Developer: My Journey into Tech',
+    excerpt:
+      'How I went from studying biology and math in high school to becoming a self-taught MERN stack developer and joining the BRIK community.',
+    publishedDate: '2025-06-25',
+    tags: ['Career Journey', 'MERN Stack', 'Self-Taught Developer'],
+    readMoreUrl: '/blog/bio-maths-to-mern-dev',
+    isExternal: false
+  },
+   {
+    id: '1',
+    title: 'From Bio-Maths Student to Fullstack Developer: My Journey into Tech',
+    excerpt:
+      'How I went from studying biology and math in high school to becoming a self-taught MERN stack developer and joining the BRIK community.',
+    publishedDate: '2025-06-25',
+    tags: ['Career Journey', 'MERN Stack', 'Self-Taught Developer'],
+    readMoreUrl: '/blog/bio-maths-to-mern-dev',
+    isExternal: false
+  },
+   {
+    id: '1',
+    title: 'From Bio-Maths Student to Fullstack Developer: My Journey into Tech',
+    excerpt:
+      'How I went from studying biology and math in high school to becoming a self-taught MERN stack developer and joining the BRIK community.',
+    publishedDate: '2025-06-25',
+    tags: ['Career Journey', 'MERN Stack', 'Self-Taught Developer'],
+    readMoreUrl: '/blog/bio-maths-to-mern-dev',
+    isExternal: false
+  }, {
+    id: '1',
+    title: 'From Bio-Maths Student to Fullstack Developer: My Journey into Tech',
+    excerpt:
+      'How I went from studying biology and math in high school to becoming a self-taught MERN stack developer and joining the BRIK community.',
+    publishedDate: '2025-06-25',
+    tags: ['Career Journey', 'MERN Stack', 'Self-Taught Developer'],
+    readMoreUrl: '/blog/bio-maths-to-mern-dev',
+    isExternal: false
+  },
+   {
+    id: '1',
+    title: 'From Bio-Maths Student to Fullstack Developer: My Journey into Tech',
+    excerpt:
+      'How I went from studying biology and math in high school to becoming a self-taught MERN stack developer and joining the BRIK community.',
+    publishedDate: '2025-06-25',
+    tags: ['Career Journey', 'MERN Stack', 'Self-Taught Developer'],
+    readMoreUrl: '/blog/bio-maths-to-mern-dev',
+    isExternal: false
   }
  ];
 

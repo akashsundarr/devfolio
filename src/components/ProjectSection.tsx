@@ -33,7 +33,7 @@ const ProjectSection = ({ projects, title = "Featured Projects", className = "" 
   }
 
   return (
-    <section className={`py-12 ${className}`}>
+    <section className={`${className}`}>
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8">
           {title}
