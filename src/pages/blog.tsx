@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
-import Navigation from '@/components/Navigation';
-import BlogCard from '../components/BlogCard';
-import Footer from '@/components/Footer';
-import { Link } from 'react-router-dom';
-import { API_BASE } from '@/lib/api';
+import { useEffect, useState } from "react";
+import Navigation from "@/components/Navigation";
+import BlogCard from "../components/BlogCard";
+import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
+import { API_BASE } from "@/lib/api";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 export interface BlogPost {
   _id?: string; // MongoDB sends _id, not id
@@ -19,42 +21,39 @@ const Blog = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
-useEffect(() => {
-  fetch("https://devfolio-backend-zn4l.onrender.com/api/blogs")
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("✅ Blog data:", data);
-      if (Array.isArray(data)) {
-        setBlogPosts(data);
-      } else {
-        console.error("❌ Expected array but got:", data);
-        setBlogPosts([]); // Prevent `.map()` on invalid data
+  useEffect(() => {
+    fetch("https://devfolio-backend-zn4l.onrender.com/api/blogs")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("✅ Blog data:", data);
+        if (Array.isArray(data)) {
+          setBlogPosts(data);
+        } else {
+          console.error("❌ Expected array but got:", data);
+          setBlogPosts([]); // Prevent `.map()` on invalid data
+        }
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("❌ Fetch error:", err);
+        setLoading(false);
+      });
+  }, []);
+  const handleDelete = async (id: string) => {
+    console.log("Deleting blog with ID:", id); // ✅ debug line
+
+    try {
+      const res = await fetch(`${API_BASE}/api/blogs/${id}`, {
+        method: "DELETE",
+      });
+
+      if (res.ok) {
+        setBlogPosts((prev) => prev.filter((post) => post._id !== id));
       }
-      setLoading(false);
-    })
-    .catch((err) => {
-      console.error("❌ Fetch error:", err);
-      setLoading(false);
-    });
-}, []);
-const handleDelete = async (id: string) => {
-  console.log("Deleting blog with ID:", id); // ✅ debug line
-
-  try {
-    const res = await fetch(`${API_BASE}/api/blogs/${id}`, {
-  method: "DELETE",
-});
-
-    if (res.ok) {
-      setBlogPosts((prev) => prev.filter((post) => post._id !== id));
+    } catch (err) {
+      console.error("Error deleting blog:", err);
     }
-  } catch (err) {
-    console.error("Error deleting blog:", err);
-  }
-};
-
-
-
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -64,12 +63,13 @@ const handleDelete = async (id: string) => {
           <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
             Latest Blog Posts
           </h2>
-          <Link
-            to="/create-blog"
-            className="underline-link hover:text-foreground transition-colors"
-          >
-            + Create New Blog
-          </Link>
+
+          <Button size="sm" className="h-8" asChild>
+            <Link to="/create-blog" className="flex items-center gap-1.5">
+              <ExternalLink className="h-3.5 w-3.5" />
+              <span className="text-xs">Create Blog</span>
+            </Link>
+          </Button>
         </div>
 
         {loading ? (
@@ -90,15 +90,12 @@ const handleDelete = async (id: string) => {
                 tags={post.tags}
                 readMoreUrl={post.readMoreUrl}
                 isExternal={post.isExternal}
-                onDelete={handleDelete} 
+                onDelete={handleDelete}
               />
-              
             ))}
-           
           </div>
         )}
       </div>
-      
     </div>
   );
 };
