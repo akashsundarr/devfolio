@@ -51,14 +51,19 @@ app.delete('/api/blogs/:id', async (req, res) => {
 });
 
 
+// Fixing the `tags` field format when saving blog posts to MongoDB (in server/index.js or similar)
+
 app.post('/api/blogs', async (req, res) => {
   try {
     await client.connect();
     const blog = req.body;
-if (typeof blog.tags === 'string') {
-  blog.tags = blog.tags.split(',').map(tag => tag.trim());
-}
-await client.db('devfolio').collection('blogs').insertOne(blog);
+
+    // Ensure `tags` is stored as an array
+    if (typeof blog.tags === 'string') {
+      blog.tags = blog.tags.split(',').map(tag => tag.trim());
+    }
+
+    await client.db('devfolio').collection('blogs').insertOne(blog);
     res.status(201).json({ message: 'Blog created' });
   } catch (err) {
     res.status(500).json({ error: 'Failed to create blog' });
