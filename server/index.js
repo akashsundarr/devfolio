@@ -55,7 +55,10 @@ app.post('/api/blogs', async (req, res) => {
   try {
     await client.connect();
     const blog = req.body;
-    await client.db('devfolio').collection('blogs').insertOne(blog);
+if (typeof blog.tags === 'string') {
+  blog.tags = blog.tags.split(',').map(tag => tag.trim());
+}
+await client.db('devfolio').collection('blogs').insertOne(blog);
     res.status(201).json({ message: 'Blog created' });
   } catch (err) {
     res.status(500).json({ error: 'Failed to create blog' });
