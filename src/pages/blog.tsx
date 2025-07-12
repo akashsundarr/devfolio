@@ -19,21 +19,24 @@ const Blog = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const res = await fetch(`${API_BASE}/api/blogs`);
-        const data = await res.json();
+useEffect(() => {
+  fetch("https://devfolio-backend-zn4l.onrender.com/api/blogs")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("✅ Blog data:", data);
+      if (Array.isArray(data)) {
         setBlogPosts(data);
-      } catch (error) {
-        console.error('Error fetching blogs:', error);
-      } finally {
-        setLoading(false);
+      } else {
+        console.error("❌ Expected array but got:", data);
+        setBlogPosts([]); // Prevent `.map()` on invalid data
       }
-    };
-
-    fetchBlogs();
-  }, []);
+      setLoading(false);
+    })
+    .catch((err) => {
+      console.error("❌ Fetch error:", err);
+      setLoading(false);
+    });
+}, []);
 const handleDelete = async (id: string) => {
   console.log("Deleting blog with ID:", id); // ✅ debug line
 
