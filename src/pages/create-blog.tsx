@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation';
+import { API_BASE } from '@/lib/api';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -39,11 +40,12 @@ const CreateBlog = () => {
       tags: formData.tags.split(',').map((tag) => tag.trim()),
     };
 
-    const res = await fetch('http://localhost:5000/api/blogs', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(blogData),
-    });
+    const res = await fetch(`${API_BASE}/api/blogs`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
+
 
     if (res.ok) {
       

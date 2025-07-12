@@ -3,6 +3,7 @@ import Navigation from '@/components/Navigation';
 import BlogCard from '../components/BlogCard';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
+import { API_BASE } from '@/lib/api';
 
 export interface BlogPost {
   _id?: string; // MongoDB sends _id, not id
@@ -21,7 +22,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/blogs');
+        const res = await fetch(`${API_BASE}/api/blogs`);
         const data = await res.json();
         setBlogPosts(data);
       } catch (error) {
@@ -37,9 +38,10 @@ const handleDelete = async (id: string) => {
   console.log("Deleting blog with ID:", id); // ✅ debug line
 
   try {
-    const res = await fetch(`http://localhost:5000/api/blogs/${id}`, {
-      method: 'DELETE',
-    });
+    const res = await fetch(`${API_BASE}/api/blogs/${id}`, {
+  method: "DELETE",
+});
+
     if (res.ok) {
       setBlogPosts((prev) => prev.filter((post) => post._id !== id));
     }
