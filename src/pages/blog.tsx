@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { API_BASE } from "@/lib/api";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, PenLine } from "lucide-react";
 
 export interface BlogPost {
   _id?: string; // MongoDB sends _id, not id
@@ -53,7 +53,7 @@ const Blog = () => {
     } catch (err) {
       console.error("Error deleting blog:", err);
     }
-  };
+  }; 
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -66,7 +66,7 @@ const Blog = () => {
 
           <Button size="sm" className="h-8" asChild>
             <Link to="/create-blog" className="flex items-center gap-1.5">
-              <ExternalLink className="h-3.5 w-3.5" />
+              <PenLine />
               <span className="text-xs">Create Blog</span>
             </Link>
           </Button>
