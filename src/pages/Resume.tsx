@@ -12,7 +12,7 @@ const Resume = () => {
           {/* 📄 Preview Image (Larger) */}
           <div className="mb-8 shadow-xl rounded-md overflow-hidden">
             <img
-              src="/resume-preview.jpg"
+              src="/resume-preview.png"
               alt="Resume Preview"
               className="w-full max-h-[1200px] object-contain border border-gray-300 rounded-md"
             />

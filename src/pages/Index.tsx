@@ -1,10 +1,7 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
-
 const Index = () => {
-   
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
@@ -16,31 +13,31 @@ const Index = () => {
             <h1 className="text-2xl md:text-3xl font-medium text-foreground">
               Akash Sundar
             </h1>
-            <p className="text-base text-muted-foreground">Fullstack Developer & Builder</p>
+
+            <p className="text-base text-muted-foreground">
+              Web Designer & Independent Builder
+            </p>
           </div>
 
           {/* Description */}
           <p className="text-foreground">
-            I love learning by doing — mostly by building, breaking, and fixing
-            things. I’m always exploring new concepts through{" "}
-            <a
-              href="#"
-              className="underline-link hover:text-foreground transition-colors"
-            >
-              reading
-            </a>{" "}
-            and occasionally sharing thoughts through{" "}
-            <a
-              href="#"
-              className="underline-link hover:text-foreground transition-colors"
-            >
-              writing
-            </a>
-            . These days, I’m working with the{" "}
-            <span className="italic">MERN stack</span>, diving deep into{" "}
-            <span className="italic">React</span> and{" "}
-            <span className="italic">Next.js</span>, and constantly improving
-            how I build full-stack apps that are fast, clean, and intuitive.
+            I enjoy building simple, fast, and thoughtful websites for small
+            businesses. Most of what I’ve learned came from experimenting,
+            rebuilding things repeatedly, and improving through real projects
+            over time.
+            <br />
+            <br />
+            Currently, I’m focused on creating clean web experiences using{" "}
+            <span className="italic">React</span>,{" "}
+            <span className="italic">Next.js</span>, and modern frontend tools.
+            I care a lot about performance, minimal design, and making websites
+            feel smooth and effortless to use.
+            <br />
+            <br />
+            Alongside freelance work and client projects, I’m building{" "}
+            <span className="italic">OwnTheSite</span> — a small studio focused
+            on fully owned websites without subscriptions, unnecessary
+            complexity, or platform lock-in.
           </p>
 
           {/* Decorative separator */}
@@ -64,13 +61,11 @@ const Index = () => {
             </div>
           </div>
         </div>
-
       </main>
-      
-      
+
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default Index; 
