@@ -69,7 +69,7 @@ export default function Index() {
                 className="relative flex justify-center lg:justify-end order-1 lg:order-2 w-full"
               >
                 <img
-                  src="/akash-hero.png"
+                  src="/akash-main.png"
                   alt="Akash Sundar"
                   className="
             w-[260px] sm:w-[320px] md:w-[400px] lg:w-full lg:max-w-[500px]
