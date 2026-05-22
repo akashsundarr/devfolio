@@ -14,7 +14,7 @@ import {
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-[#FAFAFA] text-zinc-900 font-sans selection:bg-zinc-200">
+    <div className="min-h-screen bg-[#fdfdfd] text-zinc-900 font-sans selection:bg-zinc-200">
       <Navigation />
 
       {/* Applied your layout preference + max-w to keep it clean on ultrawide monitors */}
@@ -22,7 +22,7 @@ export default function Index() {
 
         {/* ================= HERO SECTION ================= */}
 
-        <section className="pt-32 md:pt-40 pb-20 lg:pb-0 lg:min-h-[90vh] flex items-center">
+        <section className="pt-32 md:pt-40 pb-20 lg:pb-0 lg:min-h-[90vh] flex items-center bg-#fefdfe">
           <StaggerContainer className="w-full">
 
             <div className="w-full grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] items-center gap-12 lg:gap-8">
