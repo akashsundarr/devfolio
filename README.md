@@ -1,61 +1,86 @@
 <h1 align="center">
-  
-  Devfolio
+  Akash Sundar
   <br>
 </h1>
 
-<h4 align="center">A modern, minimal, and developer-friendly portfolio built using React, Vite, TypeScript, and Tailwind CSS.</h4>
+<h4 align="center">
+A personal portfolio focused on building fast, minimal, and practical digital experiences.
+</h4>
 
 <p align="center">
-  <a href="https://vercel.com"><img src="https://img.shields.io/badge/hosted%20on-vercel-000?logo=vercel" alt="Vercel" /></a>
-  <a href="https://github.com/akashsundarr/devfolio"><img src="https://img.shields.io/github/stars/akashsundarr/devfolio?style=social" alt="GitHub stars" /></a>
-  <a href="https://lovable.dev"><img src="https://img.shields.io/badge/built%20with-lovable-blueviolet" alt="Lovable" /></a>
+  <a href="https://vercel.com">
+    <img src="https://img.shields.io/badge/hosted%20on-vercel-000?logo=vercel" alt="Vercel" />
+  </a>
+
+  <a href="https://github.com/akashsundarr">
+    <img src="https://img.shields.io/badge/github-akashsundarr-18181b?logo=github" alt="GitHub" />
+  </a>
+
+  <a href="https://ownthesite-landing.vercel.app">
+    <img src="https://img.shields.io/badge/brand-OwnTheSite-f5f5f5" alt="OwnTheSite" />
+  </a>
 </p>
 
 <p align="center">
-  <a href="#features">Features</a> •
-  <a href="#demo">Demo</a> •
-  <a href="#installation">Installation</a> •
-  <a href="#deployment">Deployment</a> •
-  <a href="#tech-stack">Tech Stack</a> •
-  <a href="#credits">Credits</a> •
-  <a href="#license">License</a>
+  <a href="https://akashsundar.is-a.dev/">Live Website</a> •
+  <a href="https://github.com/akashsundarr">GitHub</a> •
+  <a href="https://ownthesite-landing.vercel.app">OwnTheSite</a>
 </p>
 
 ---
 
-![demo](https://user-images.githubusercontent.com/75992256/devfolio-preview.gif)
+## About
 
-## ✨ Features
+This is my personal portfolio website built to showcase selected projects,
+workflow, tools, and experiments in web development.
 
-- 📌 Home, Projects, Blog, Uses, 404
-- ⚡ Built with [Vite](https://vitejs.dev/) for fast builds
-- 🎨 Styled with Tailwind CSS + [shadcn/ui](https://ui.shadcn.dev/)
-- 🧠 Lovable AI integration for rapid prototyping
-- 🌗 Dark/light mode toggle
-- ⚛️ Fully typed with TypeScript
-- 🧭 SPA Routing with React Router
-- ☁️ Deployed on Vercel
+The overall design approach focuses on:
+- minimal interfaces
+- calm typography
+- fast performance
+- practical user experience
 
 ---
 
-## 🚀 Demo
+## Sections
 
-🔗 [Live Preview](https://devfolio-brown.vercel.app)
+- Home
+- About
+- Brand
+- Projects
+- Uses
+- Contact
 
 ---
 
-## 🛠 Installation
+## Tech Stack
 
-```bash
-# Clone the repo
-git clone https://github.com/akashsundarr/devfolio.git
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+- React Router
+- Vercel
 
-# Navigate to the folder
-cd devfolio
+---
 
-# Install dependencies
-npm install
+## Featured Work
 
-# Start the local dev server
-npm run dev
+- Premium Ladies Fitness
+- Starwings Travel
+- Starwings HVAC
+- Shaheen Flowers
+- NPS Kaloor
+
+---
+
+## Brand
+
+OwnTheSite — an independent web design and development brand focused on building fast, minimal, and practical websites for businesses and startups.
+
+---
+
+## License
+
+Personal portfolio project by Akash Sundar.
