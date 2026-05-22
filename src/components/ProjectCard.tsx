@@ -1,8 +1,5 @@
-
+import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
-import { Badge } from './ui/badge';
-import { Button } from './ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 
 interface ProjectCardProps {
   name: string;
@@ -14,71 +11,59 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ name, description, tags, githubUrl, liveUrl }: ProjectCardProps) => {
   return (
-    <Card className="h-full flex flex-col hover:shadow-lg transition-shadow duration-300 border-border/50 hover:border-border">
-      <CardHeader className="pb-3">
-        <CardTitle className="text-lg font-semibold text-foreground line-clamp-1">
-          {name}
-        </CardTitle>
-        <CardDescription className="text-sm text-muted-foreground line-clamp-2 min-h-[2.5rem]">
-          {description}
-        </CardDescription>
-      </CardHeader>
+    <div className="h-full flex flex-col p-8 bg-white border border-zinc-200 rounded-3xl hover:border-zinc-300 transition-colors duration-300 group">
       
-      <CardContent className="flex-1 flex flex-col justify-between pt-0">
+      <div className="mb-6">
+        <h3 className="text-xl font-medium text-zinc-900 line-clamp-1 mb-2">
+          {name}
+        </h3>
+        <p className="text-sm text-zinc-500 leading-relaxed line-clamp-3 min-h-[3.75rem]">
+          {description}
+        </p>
+      </div>
+      
+      <div className="flex-1 flex flex-col justify-end">
         {/* Tags */}
         {tags && tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mb-4">
+          <div className="flex flex-wrap gap-2 mb-6">
             {tags.map((tag) => (
-              <Badge 
+              <span 
                 key={tag} 
-                variant="secondary" 
-                className="text-xs px-2 py-0.5 bg-muted/50 text-muted-foreground hover:bg-muted"
+                className="px-3 py-1 text-xs font-medium text-zinc-600 bg-zinc-100 rounded-full"
               >
                 {tag}
-              </Badge>
+              </span>
             ))}
           </div>
         )}
         
         {/* Action Buttons */}
-        <div className="flex gap-2 mt-auto">
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="flex-1 h-8"
-            asChild
+        <div className="flex gap-3 mt-auto">
+          <a 
+            href={githubUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-full border border-zinc-200 text-sm font-medium text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900 transition-colors"
           >
-            <a 
-              href={githubUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5"
-            >
-              <Github className="h-3.5 w-3.5" />
-              <span className="text-xs">Code</span>
-            </a>
-          </Button>
+            <Github className="h-4 w-4" />
+            <span>Code</span>
+          </a>
           
           {liveUrl && (
-            <Button 
-              size="sm" 
-              className="flex-1 h-8"
-              asChild
+            <a 
+              href={liveUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-full bg-zinc-900 text-white text-sm font-medium hover:bg-zinc-800 transition-colors"
             >
-              <a 
-                href={liveUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5"
-              >
-                <ExternalLink className="h-3.5 w-3.5" />
-                <span className="text-xs">Live Demo</span>
-              </a>
-            </Button>
+              <ExternalLink className="h-4 w-4" />
+              <span>Live Demo</span>
+            </a>
           )}
         </div>
-      </CardContent>
-    </Card>
+      </div>
+
+    </div>
   );
 };
 
